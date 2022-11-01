@@ -1,10 +1,16 @@
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
+### VS Code ###
+.vscode/
+
+### IntelliJ IDEA ###
 .idea
-.DS_Store
+*.iws
+*.iml
+*.ipr
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+### Other files ###
+.DS_Store
