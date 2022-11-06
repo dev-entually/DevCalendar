@@ -1,0 +1,16 @@
+.tags > button {
+  color: black;
+}
+
+.active {
+  color: red;
+}
+
+.tag {
+  padding: 10px;
+  color: cornflowerblue;
+  background-color: beige;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
