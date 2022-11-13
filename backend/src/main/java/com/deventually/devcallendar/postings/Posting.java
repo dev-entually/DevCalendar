@@ -27,6 +27,7 @@ public class Posting {
     @Column(name = "COMPANY_NAME", nullable = false)
     private String companyName;
     @ElementCollection
+    @Enumerated(EnumType.STRING)
     @Column(name = "CAREERS")
     private List<Career> careers;
     @ElementCollection
