@@ -1,6 +1,12 @@
 package com.deventually.devcallendar.postings.dto;
 
 public enum Career {
-    NEW,
-    OLD,
+    NEW("new"),
+    OLD("old");
+
+    public final String career;
+
+    Career(String career) {
+        this.career = career;
+    }
 }
