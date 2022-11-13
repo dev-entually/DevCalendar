@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 public class PostingCreateController {
 
@@ -19,8 +21,9 @@ public class PostingCreateController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/postings")
-    public SuccessPostingCreateResponseDto create(@RequestBody PostingCreateRequestDto postingCreateRequestDto) {
-
+    public SuccessPostingCreateResponseDto create(
+            @RequestBody @Valid PostingCreateRequestDto postingCreateRequestDto
+    ) {
         return new SuccessPostingCreateResponseDto(
                 postingCreateService.create(postingCreateRequestDto)
         );
