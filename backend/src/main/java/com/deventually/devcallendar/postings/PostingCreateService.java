@@ -12,17 +12,16 @@ import java.util.List;
 
 @Service
 public class PostingCreateService {
-    public PostingRetrieveDto create(PostingCreateRequestDto postingCreateRequestDto) {
-        List<Career> careers = new ArrayList<>();
-        List<Job> jobs = new ArrayList<>();
-        careers.add(Career.NEW);
-        return new PostingRetrieveDto(
-                123L,
-                "title",
-                LocalDateTime.now(),
-                null,
-                "desc",
-                "company",
-                careers, jobs);
+
+    private final PostingRepository postingRepository;
+
+    public PostingCreateService(PostingRepository postingRepository) {
+        this.postingRepository = postingRepository;
     }
+
+    public PostingRetrieveDto create(PostingCreateRequestDto postingCreateRequestDto) {
+        Posting posting = postingRepository.save(Posting.of(postingCreateRequestDto));
+        return posting.toRetrieveDto();
+    }
+
 }
