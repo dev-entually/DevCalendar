@@ -38,7 +38,7 @@ public class RequestContextResolver implements HandlerMethodArgumentResolver {
         Locale locale = localeResolver.resolveLocale(req);
 
         RequestContext requestContext = new RequestContext(
-                SupportLang.from(locale),
+                SupportLang.of(locale),
                 zoneId
         );
         RequestContextHolder.set(requestContext);

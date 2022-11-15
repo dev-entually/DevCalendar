@@ -14,7 +14,7 @@ public enum SupportLang {
         this.code = code;
     }
 
-    public static SupportLang from(Locale locale) {
+    public static SupportLang of(Locale locale) {
         return Arrays.stream(values()).filter(it -> it.locale == locale).findFirst().orElse(KO);
     }
 }
