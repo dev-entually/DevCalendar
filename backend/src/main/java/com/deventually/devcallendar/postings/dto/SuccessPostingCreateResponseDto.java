@@ -1,14 +1,20 @@
 package com.deventually.devcallendar.postings.dto;
 
 public class SuccessPostingCreateResponseDto {
-    private String message = "Your request was successfully processed.";
-    private String status = "success";
-    private String responseZoneId = "Asia/Seoul";
-    private String responseLanguage = "ko";
-    private PostingRetrieveDto result;
+    private final String responseZoneId;
+    private final String responseLanguage;
+    private final PostingRetrieveDto result;
+    private final String message = "Your request was successfully processed.";
+    private final String status = "success";
 
-    public SuccessPostingCreateResponseDto(PostingRetrieveDto result) {
+    public SuccessPostingCreateResponseDto(
+            PostingRetrieveDto result,
+            String responseLanguage,
+            String responseZoneId
+    ) {
         this.result = result;
+        this.responseLanguage = responseLanguage;
+        this.responseZoneId = responseZoneId;
     }
 
     public String getMessage() {

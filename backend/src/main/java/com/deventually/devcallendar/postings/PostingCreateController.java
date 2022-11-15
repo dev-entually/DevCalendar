@@ -28,7 +28,9 @@ public class PostingCreateController {
     ) {
 
         return new SuccessPostingCreateResponseDto(
-                postingCreateService.create(postingCreateRequestDto)
+                postingCreateService.create(postingCreateRequestDto),
+                requestContext.getSupportLang().code,
+                requestContext.getZoneId().getId()
         );
     }
 }
