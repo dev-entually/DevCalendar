@@ -1,0 +1,8 @@
+.selected {
+  color: beige;
+  background-color: cornflowerblue;
+}
+
+.btn {
+  margin: 0 4px;
+}

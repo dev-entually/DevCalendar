@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import styles from './Button.module.css';
 
 interface ButtonProps {
   label: string;
+  className?: string;
+  id?: string;
   size?: 'default' | 'small' | 'large';
-  onClick?: () => void;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 const fontSizeMapper = Object.freeze({
@@ -13,10 +15,11 @@ const fontSizeMapper = Object.freeze({
   large: 18,
 });
 
-const Button: React.FC<ButtonProps> = ({ label, size = fontSizeMapper['default'], onClick }) => {
+const Button: React.FC<ButtonProps> = ({ id, label, size = fontSizeMapper['default'], onClick , className }) => {
   return (
     <button
-      className={styles.btn}
+      id={id}
+      className={`${styles.btn} ${className}`}
       style={{
         fontSize: size,
       }}
