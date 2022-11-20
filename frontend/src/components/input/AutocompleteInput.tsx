@@ -23,17 +23,24 @@ const AutocompleteInput: React.FC<AutocompleteInputProps> = ({ options }) => {
       {isDropdownOpened
       ? <DropdownInput
           className={`${isDropdownOpened ? styles.open : styles.hide}`}
-          options={matchedOptions(inputValue)} />
+          options={matchedOptions(inputValue)}
+          onChange={setInputValue}
+        />
       : inputValue && <EmptyDropdown />}
     </div>
   );
 };
 
-const DropdownInput: React.FC<DropdownInputProps> = ({ options, className }) => {
+const DropdownInput: React.FC<DropdownInputProps> = ({ options, className, onChange }) => {
+  const onDropdownSelect = (selected: string) => {
+    if (!onChange) return;
+    onChange(selected);
+  };
+
   return (
     <ul className={`${styles.dropdown} ${className}`}>
       {options.map((option, i) => (
-        <li key={i.toString()}>{option}</li>
+        <li key={i.toString()} onClick={() => onDropdownSelect(option)}>{option}</li>
       ))}
     </ul>
   );

@@ -19,4 +19,5 @@ export interface AutocompleteInputProps {
 export interface DropdownInputProps {
   options: string[];
   className?: string;
+  onChange?: (s: string) => void;
 }

@@ -29,4 +29,5 @@
 }
 .dropdown li {
   padding: 2px;
+  cursor: pointer;
 }
