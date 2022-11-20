@@ -1,0 +1,32 @@
+.container {
+  height: 200px;
+  overflow: auto;
+  /*transition: all 1s ease;*/
+}
+
+.container input {
+  padding: 10px;
+  width: 200px;
+}
+/* TODO: open hide transition 구현
+.open {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+.hide {
+  opacity: 0;
+  transition: opacity 1s ease;
+  height: 200px;
+}
+*/
+
+.dropdown {
+  list-style: none;
+  text-align: left;
+  width: 200px;
+  background-color: rgba(100, 100, 100, 0.2);
+  padding: 4px 10px;
+}
+.dropdown li {
+  padding: 2px;
+}

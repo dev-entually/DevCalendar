@@ -11,3 +11,12 @@ export interface InputWithOptions<T = string> {
   onChange: (selected: T[]) => void;
   resolver?: (option: Code<T>) => string | T;
 }
+
+export interface AutocompleteInputProps {
+  options: string[];
+}
+
+export interface DropdownInputProps {
+  options: string[];
+  className?: string;
+}

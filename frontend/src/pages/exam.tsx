@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components';
 import '../assets/style.css';
-import CheckboxButtonInput from '../components/input/CheckboxButtonInput';
-import {CheckableTagsInputProps, Code} from '../model/components/input';
+import {
+  AutocompleteInput,
+  CheckboxButtonInput,
+} from '../components';
+import { Code } from '../model/components/input';
 
 const options: Code[] = [
   { label: 'Code 1', value: 'code 1' },
@@ -38,6 +41,7 @@ const Exam = () => (
     <section>
       <h1>Input</h1>
       <CheckboxButtonInputExam />
+      <AutocompleteInputExam />
     </section>
   </div>
 );
@@ -58,5 +62,30 @@ const CheckboxButtonInputExam: React.FC = () => {
     </>
   );
 };
+
+const AutocompleteInputExam: React.FC = () => {
+  return (
+    <>
+      <h2>AutocompleteInput</h2>
+      <AutocompleteInput options={autocompleteOptions} />
+    </>
+  );
+};
+
+const autocompleteOptions: string[] = [
+  '안녕',
+  '안녕하세요',
+  '안녕!',
+  '인녕',
+  '정경진입니다.',
+  'DevCalendar 화이팅',
+  'develop',
+  'develop',
+  'develop',
+  'develop',
+  'develop',
+  'develop',
+];
+
 
 export default Exam;
