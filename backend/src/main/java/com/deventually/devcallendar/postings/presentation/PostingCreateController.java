@@ -1,6 +1,7 @@
-package com.deventually.devcallendar.postings;
+package com.deventually.devcallendar.postings.presentation;
 
 import com.deventually.devcallendar.context.RequestContext;
+import com.deventually.devcallendar.postings.application.PostingCreateService;
 import com.deventually.devcallendar.postings.dto.PostingCreateRequestDto;
 import com.deventually.devcallendar.postings.dto.SuccessPostingCreateResponseDto;
 import org.springframework.http.HttpStatus;

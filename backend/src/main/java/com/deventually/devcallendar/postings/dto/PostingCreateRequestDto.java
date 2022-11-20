@@ -1,5 +1,8 @@
 package com.deventually.devcallendar.postings.dto;
 
+import com.deventually.devcallendar.postings.domain.Career;
+import com.deventually.devcallendar.postings.domain.Job;
+
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 import java.util.List;

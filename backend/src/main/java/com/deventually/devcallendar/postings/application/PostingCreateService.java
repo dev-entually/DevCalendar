@@ -1,14 +1,10 @@
-package com.deventually.devcallendar.postings;
+package com.deventually.devcallendar.postings.application;
 
-import com.deventually.devcallendar.postings.dto.Career;
-import com.deventually.devcallendar.postings.dto.Job;
+import com.deventually.devcallendar.postings.domain.Posting;
+import com.deventually.devcallendar.postings.domain.PostingRepository;
 import com.deventually.devcallendar.postings.dto.PostingCreateRequestDto;
 import com.deventually.devcallendar.postings.dto.PostingRetrieveDto;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class PostingCreateService {

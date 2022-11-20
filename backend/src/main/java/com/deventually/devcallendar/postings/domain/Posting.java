@@ -1,7 +1,5 @@
-package com.deventually.devcallendar.postings;
+package com.deventually.devcallendar.postings.domain;
 
-import com.deventually.devcallendar.postings.dto.Career;
-import com.deventually.devcallendar.postings.dto.Job;
 import com.deventually.devcallendar.postings.dto.PostingCreateRequestDto;
 import com.deventually.devcallendar.postings.dto.PostingRetrieveDto;
 
@@ -50,15 +48,15 @@ public class Posting {
     }
 
     public static Posting of(PostingCreateRequestDto dto) {
-       return new Posting(
-              dto.getTitle(),
-              dto.getStartDateTime(),
-              dto.getEndDateTime(),
-              dto.getDescription(),
-              dto.getCompanyName(),
-              dto.getCareers(),
-              dto.getJobs()
-       );
+        return new Posting(
+                dto.getTitle(),
+                dto.getStartDateTime(),
+                dto.getEndDateTime(),
+                dto.getDescription(),
+                dto.getCompanyName(),
+                dto.getCareers(),
+                dto.getJobs()
+        );
     }
 
     public PostingRetrieveDto toRetrieveDto() {
