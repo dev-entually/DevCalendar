@@ -1,4 +1,4 @@
-export interface Code<T = string> {
+export interface LabelValuePair<T = string> {
   label: string;
   value: T;
 }
@@ -6,8 +6,19 @@ export interface Code<T = string> {
 export interface CheckableTagsInputProps extends InputWithOptions {}
 
 export interface InputWithOptions<T = string> {
-  options: Code<T>[];
+  options: LabelValuePair<T>[];
   selected: T[];
   onChange: (selected: T[]) => void;
-  resolver?: (option: Code<T>) => string | T;
+  resolver?: (option: LabelValuePair<T>) => string | T;
+}
+
+export interface AutocompleteInputProps<T = string> {
+  options: LabelValuePair<T>[];
+  onChange: (selected: LabelValuePair<T>) => void;
+}
+
+export interface DropdownInputProps {
+  options: LabelValuePair[];
+  className?: string;
+  onChange?: (s: LabelValuePair) => void;
 }
