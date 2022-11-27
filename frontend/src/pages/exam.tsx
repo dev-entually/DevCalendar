@@ -6,9 +6,9 @@ import {
   AutocompleteInput,
   CheckboxButtonInput,
 } from '../components';
-import { Code } from '../model/components/input';
+import { LabelValuePair } from '../model/components/input';
 
-const options: Code[] = [
+const options: LabelValuePair[] = [
   { label: 'Code 1', value: 'code 1' },
   { label: 'Code 2', value: 'code 2' },
   { label: 'Code 3', value: 'code 3' },
@@ -64,27 +64,27 @@ const CheckboxButtonInputExam: React.FC = () => {
 };
 
 const AutocompleteInputExam: React.FC = () => {
+  const [selected, setSelected] = useState<LabelValuePair | null>(null);
   return (
     <>
       <h2>AutocompleteInput</h2>
-      <AutocompleteInput options={autocompleteOptions} />
+      {selected && <pre>{selected && `label: ${selected.label}, value: ${selected.value}`}</pre>}
+      <AutocompleteInput
+        options={autocompleteOptions}
+        onChange={setSelected} />
     </>
   );
 };
 
-const autocompleteOptions: string[] = [
-  '안녕',
-  '안녕하세요',
-  '안녕!',
-  '인녕',
-  '정경진입니다.',
-  'DevCalendar 화이팅',
-  'develop',
-  'develop',
-  'develop',
-  'develop',
-  'develop',
-  'develop',
+const autocompleteOptions: LabelValuePair[] = [
+  { label: '네이버', value: 'naver' },
+  { label: '네이버2', value: 'naver2' },
+  { label: '카카오', value: 'kakao' },
+  { label: '카카오2', value: 'kakao2' },
+  { label: '카카오3', value: 'kakao3' },
+  { label: '라인', value: 'line' },
+  { label: '쿠팡', value: 'coupang' },
+  { label: '배달의민족', value: 'woowa-brothers' },
 ];
 
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '../../components';
-import { Code, CheckableTagsInputProps } from '../../model/components/input';
+import { LabelValuePair, CheckableTagsInputProps } from '../../model/components/input';
 import styles from './CheckboxButtonInput.module.css';
 
 const removeAElementInArray = (elementToRemove: any, arr: any[]) => {
@@ -21,7 +21,7 @@ const CheckboxButtonInput: React.FC<CheckableTagsInputProps> = ({ options, selec
       onChange([...selected, currentTarget.id]);
   };
 
-  const selectedClassOrEmpty = (option: Code) => selected.includes(option.value) ? styles.selected : '';
+  const selectedClassOrEmpty = (option: LabelValuePair) => selected.includes(option.value) ? styles.selected : '';
 
   return (
     <div>
