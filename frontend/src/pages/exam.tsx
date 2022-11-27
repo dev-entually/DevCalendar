@@ -5,6 +5,7 @@ import '../assets/style.css';
 import {
   AutocompleteInput,
   CheckboxButtonInput,
+  Calendar,
 } from '../components';
 import { LabelValuePair } from '../model/components/input';
 
@@ -42,6 +43,8 @@ const Exam = () => (
       <h1>Input</h1>
       <CheckboxButtonInputExam />
       <AutocompleteInputExam />
+      <h1>Calendar</h1>
+      <CalendarExam />
     </section>
   </div>
 );
@@ -87,5 +90,12 @@ const autocompleteOptions: LabelValuePair[] = [
   { label: '배달의민족', value: 'woowa-brothers' },
 ];
 
+const CalendarExam: React.FC = () => {
+  return (
+    <>
+      <Calendar />
+    </>
+  );
+};
 
 export default Exam;
