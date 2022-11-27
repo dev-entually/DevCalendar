@@ -12,9 +12,9 @@ export interface InputWithOptions<T = string> {
   resolver?: (option: LabelValuePair<T>) => string | T;
 }
 
-export interface AutocompleteInputProps {
-  options: LabelValuePair[];
-  onChange: (selected: LabelValuePair) => void;
+export interface AutocompleteInputProps<T = string> {
+  options: LabelValuePair<T>[];
+  onChange: (selected: LabelValuePair<T>) => void;
 }
 
 export interface DropdownInputProps {
