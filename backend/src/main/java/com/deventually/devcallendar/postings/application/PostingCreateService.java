@@ -5,6 +5,7 @@ import com.deventually.devcallendar.postings.domain.PostingRepository;
 import com.deventually.devcallendar.postings.dto.PostingCreateRequestDto;
 import com.deventually.devcallendar.postings.dto.PostingRetrieveDto;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class PostingCreateService {
@@ -15,9 +16,10 @@ public class PostingCreateService {
         this.postingRepository = postingRepository;
     }
 
+
+    @Transactional
     public PostingRetrieveDto create(PostingCreateRequestDto postingCreateRequestDto) {
         Posting posting = postingRepository.save(Posting.of(postingCreateRequestDto));
         return posting.toRetrieveDto();
     }
-
 }

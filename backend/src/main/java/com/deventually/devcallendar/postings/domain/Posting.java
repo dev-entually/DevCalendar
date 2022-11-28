@@ -6,6 +6,7 @@ import com.deventually.devcallendar.postings.dto.PostingRetrieveDto;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 public class Posting {
@@ -57,6 +58,35 @@ public class Posting {
                 dto.getCareers(),
                 dto.getJobs()
         );
+    }
+
+    public void update(
+            String title,
+            String description,
+            LocalDateTime startDateTime,
+            LocalDateTime endDateTime,
+            String companyName,
+            List<Career> careers,
+            List<Job> jobs
+    ) {
+        if (
+                Objects.equals(this.title, title)
+                        && Objects.equals(this.description, description)
+                        && Objects.equals(this.startDateTime, startDateTime)
+                        && Objects.equals(this.endDateTime, endDateTime)
+                        && Objects.equals(this.companyName, companyName)
+                        && Objects.equals(this.careers, careers)
+                        && Objects.equals(this.jobs, jobs)
+        ) {
+            return;
+        }
+        this.title = title;
+        this.description = description;
+        this.startDateTime = startDateTime;
+        this.endDateTime = endDateTime;
+        this.companyName = companyName;
+        this.careers = careers;
+        this.jobs = jobs;
     }
 
     public PostingRetrieveDto toRetrieveDto() {
