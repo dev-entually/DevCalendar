@@ -30,8 +30,8 @@ const CheckboxButtonInput: React.FC<CheckableTagsInputProps> = ({ options, selec
           className={`${styles.btn} ${selectedClassOrEmpty(option)}`}
           key={option.value}
           id={option.value}
-          label={option.label}
-          onClick={onSelectedChange} />
+          onClick={onSelectedChange}
+        >{option.label}</Button>
       )}
     </div>
   );

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components';
-import '../assets/style.css';
 import {
   AutocompleteInput,
   CheckboxButtonInput,
@@ -27,14 +26,14 @@ const Exam = () => (
       <h1>Button</h1>
       <h2>Size</h2>
       <div className="wrap">
-        <Button label="small" size="small" />
-        <Button label="default" />
-        <Button label="large" size="large" />
+        <Button size="small">small</Button>
+        <Button>default</Button>
+        <Button size="large">large</Button>
       </div>
 
       <h2>Event</h2>
       <div className="wrap">
-        <Button label="onClick" onClick={() => console.log('Button is clicked.')}/>
+        <Button onClick={() => console.log('Button is clicked.')}>onClick</Button>
       </div>
     </div>
 
