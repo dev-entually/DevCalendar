@@ -3,37 +3,24 @@ package com.deventually.devcallendar.postings.dto;
 import com.deventually.devcallendar.postings.domain.Career;
 import com.deventually.devcallendar.postings.domain.Job;
 
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class PostingRetrieveDto {
-    private Long postingKey;
+public class PostingUpdateRequestDto {
+
+    @NotBlank
     private String title;
     private LocalDateTime startDateTime;
     private LocalDateTime endDateTime;
     private String description;
+    @NotBlank
     private String companyName;
     private List<Career> careers;
     private List<Job> jobs;
 
-    public PostingRetrieveDto(Long postingKey, String title, LocalDateTime startDateTime, LocalDateTime endDateTime,
-                              String description, String companyName, List<Career> careers, List<Job> jobs) {
-        this.postingKey = postingKey;
-        this.title = title;
-        this.startDateTime = startDateTime;
-        this.endDateTime = endDateTime;
-        this.description = description;
-        this.companyName = companyName;
-        this.careers = careers;
-        this.jobs = jobs;
-    }
-
-    public Long getPostingKey() {
-        return postingKey;
-    }
-
     public String getTitle() {
-        return title;
+        return this.title;
     }
 
     public LocalDateTime getStartDateTime() {

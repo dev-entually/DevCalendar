@@ -1,4 +1,4 @@
-package com.deventually.devcallendar.postings.dto;
+package com.deventually.devcallendar.postings.domain;
 
 public enum Job {
     IOS("ios"),
